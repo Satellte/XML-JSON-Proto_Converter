@@ -8,11 +8,11 @@ public class Parseable {
 
         }
 
-    void countKeys(){
+    static void countKeys(){
 
         }
 
-    void printCount(){
+    static void printCount(){
 
         }
 

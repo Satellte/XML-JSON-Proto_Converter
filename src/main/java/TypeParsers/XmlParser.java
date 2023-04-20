@@ -5,17 +5,17 @@ public class XmlParser extends Parseable {
 
     public static void parseString(StringBuilder input) {
         System.out.println(input);
-        this.countKeys();
+        countKeys();
     }
 
 
-    public void countKeys() {
+    public static void countKeys() {
         System.out.println("Считаем ключи");
-        this.printCount();
+        printCount();
     }
 
 
-    public void printCount() {
+    public static void printCount() {
         System.out.println("Красивый вывод на печать счетчика XML" );
     }
 }
