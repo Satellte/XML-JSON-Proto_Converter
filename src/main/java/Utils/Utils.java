@@ -1,5 +1,8 @@
 package Utils;
 
+import TypeParsers.JsonParser;
+import TypeParsers.XmlParser;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -31,8 +34,10 @@ public class Utils {
 
         if (firstChar == '{') {
             System.out.println("Это JSON. Запускай парсер JSON");
+            JsonParser.parseString(inputString);
         } else if (firstChar == '<') {
             System.out.println("Это XML. Запускай парсер XML");
+            XmlParser.parseString(inputString);
         } else {
             System.out.println("Неподходящий тип");
         }

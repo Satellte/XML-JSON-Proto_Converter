@@ -4,11 +4,17 @@ public abstract Parseable {
 
     int countKey = 0;
 
-    void parseString(){}
+    void parseString(){
 
-    void countKeys(){}
+        }
 
-    void printCount(){}
+    void countKeys(){
+
+        }
+
+    void printCount(){
+
+        }
 
 
 }

@@ -2,18 +2,20 @@ package TypeParsers;
 
 public class XmlParser implements Parseable {
 
-    @Override
-    public void parseString() {
-        System.out.println(3);
+
+    public void parseString(StringBuilder input) {
+        System.out.println(input);
+        this.countKeys();
     }
 
-    @Override
+
     public void countKeys() {
-        System.out.println(3);
+        System.out.println("Считаем ключи");
+        this.printCount();
     }
 
-    @Override
+
     public void printCount() {
-        System.out.println(3);
+        System.out.println("Красивый вывод на печать счетчика XML" );
     }
 }

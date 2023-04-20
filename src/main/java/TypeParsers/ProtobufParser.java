@@ -2,18 +2,18 @@ package TypeParsers;
 
 public class ProtobufParser implements Parseable {
 
-    @Override
-    public void parseString() {
-        System.out.println(2);
+    public void parseString(StringBuilder input) {
+        System.out.println(input);
+        this.countKeys();
     }
 
-    @Override
     public void countKeys() {
-        System.out.println(2);
+        System.out.println("Считаем ключи");
+        this.printCount();
     }
 
-    @Override
+
     public void printCount() {
-        System.out.println(2);
+        System.out.println("Красивый вывод на печать счетчика XML" );
     }
 }
