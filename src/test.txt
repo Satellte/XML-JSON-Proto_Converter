@@ -1,0 +1,13 @@
+{
+    "key": {
+        "child_key1": "child_key_value",
+        "child_key2": "child_key_value",
+        "child_key3": {
+            "child_child_key": "value"
+        },
+        "child_key4": {
+            "child_child_key1": "value1",
+            "child_child_key2": "value2"
+        }
+    }
+}

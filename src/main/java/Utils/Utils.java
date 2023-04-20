@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 public class Utils {
     public static StringBuilder readString(){
-        File inputText = new File("./test.txt");
+//        File inputText = new File("./test.txt");
+        File inputText = new File("/home/kwizard/IdeaProjects/XML-JSON-Proto_Converter/src/test.txt");
         Scanner scanner = null;
         try {
             scanner = new Scanner(inputText);
