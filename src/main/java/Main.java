@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.File;
-import Parseable;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,22 +24,6 @@ public class Main {
         return inputString;
     }
 
-    static void getTypeOfString(StringBuilder inputString){
-            if (inputString == null || inputString.isEmpty()) {
-                System.out.println("Не подходящий тип");
-            }
-
-            char firstChar = inputString.charAt(0);
-
-            if (firstChar == '{') {
-                JsonParser.parse(inputString);
-            } else if (firstChar == '<') {
-                XmlParser.parse(inputString);
-            } else if (Character.isLowerCase(firstChar)) {
-                return FirstCharacter.LETTER_LOWERCASE;
-            } else {
-                return FirstCharacter.OTHER;
-            }
-    }
+    static void getTypeOfString(StringBuilder inputString){}
 
 }
