@@ -1,14 +1,7 @@
-import static Utils.Utils.getTypeOfString;
-import static Utils.Utils.readString;
+import static Utils.Utils.*;
 
 public class Main {
     public static void main(String[] args) {
-        getTypeOfString(readString());
-
+        readFile();
     }
-
-
-
-
-
 }

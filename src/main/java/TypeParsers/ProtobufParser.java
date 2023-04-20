@@ -2,7 +2,7 @@ package TypeParsers;
 
 public class ProtobufParser extends Parseable {
 
-    public void parseString(StringBuilder input) {
+    public static void parseString(StringBuilder input) {
         System.out.println(input);
         countKeys();
     }

@@ -1,6 +1,7 @@
 package Utils;
 
 import TypeParsers.JsonParser;
+import TypeParsers.ProtobufParser;
 import TypeParsers.XmlParser;
 
 import java.io.File;
@@ -8,9 +9,13 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Utils {
-    public static StringBuilder readString(){
-//        File inputText = new File("./test.txt");
-        File inputText = new File("/home/kwizard/IdeaProjects/XML-JSON-Proto_Converter/src/test.txt");
+    static Scanner scan = new Scanner(System.in);
+    public static void readFile(){
+        System.out.println("Укажите файл:");
+        String path = scan.nextLine();
+        scan.close();
+        String formatOfFile = checkType(path);
+        File inputText = new File(path);
         Scanner scanner = null;
         try {
             scanner = new Scanner(inputText);
@@ -19,28 +24,41 @@ public class Utils {
         }
         StringBuilder inputString = new StringBuilder();
         while (scanner.hasNextLine()) {
-//            inputString.append(scanner.nextLine().replace("\n", ""));
             inputString.append(scanner.nextLine());
         }
         scanner.close();
-        return inputString;
-    }
 
-    public static void getTypeOfString(StringBuilder inputString){
-        if (inputString == null || inputString.isEmpty()) {
-            System.out.println("Не верный ввод");;
+            switch (formatOfFile) {
+                case "XML" -> XmlParser.parseString(inputString);
+                case "JSON" -> JsonParser.parseString(inputString);
+                case "PROTO" -> ProtobufParser.parseString(inputString);
+            }
         }
 
-        char firstChar = inputString.charAt(0);
+//    public static void getTypeOfFile(StringBuilder inputString){
+//        if (inputString == null || inputString.isEmpty()) {
+//            System.out.println("Не верный ввод");;
+//        }
+//
+//        char firstChar = inputString.charAt(0);
+//
+//        if (firstChar == '{') {
+//            System.out.println("Это JSON. Запускай парсер JSON");
+//            JsonParser.parseString(inputString);
+//        } else if (firstChar == '<') {
+//            System.out.println("Это XML. Запускай парсер XML");
+//            XmlParser.parseString(inputString);
+//        } else {
+//            System.out.println("Неподходящий тип");
+//        }
+//    }
 
-        if (firstChar == '{') {
-            System.out.println("Это JSON. Запускай парсер JSON");
-            JsonParser.parseString(inputString);
-        } else if (firstChar == '<') {
-            System.out.println("Это XML. Запускай парсер XML");
-            XmlParser.parseString(inputString);
-        } else {
-            System.out.println("Неподходящий тип");
+    public static String checkType(String path){
+        if (path == null) {
+            System.out.println("Не верно указан путь");
+            readFile();
         }
+        String extension = path.substring(path.lastIndexOf(".") + 1).toUpperCase();
+        return extension;
     }
 }
