@@ -15,23 +15,10 @@ public class Utils {
         String path = scan.nextLine();
         scan.close();
         String formatOfFile = checkType(path);
-        File inputText = new File(path);
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(inputText);
-        } catch (FileNotFoundException e) {
-            System.out.println("Не удалось найти файл");
-        }
-        StringBuilder inputString = new StringBuilder();
-        while (scanner.hasNextLine()) {
-            inputString.append(scanner.nextLine());
-        }
-        scanner.close();
-
-            switch (formatOfFile) {
-                case "XML" -> XmlParser.parseString(inputString);
-                case "JSON" -> JsonParser.parseString(inputString);
-                case "PROTO" -> ProtobufParser.parseString(inputString);
+        switch (formatOfFile) {
+                case "XML" -> XmlParser.parseString(path);
+//                case "JSON" -> JsonParser.parseString(path);
+//                case "PROTO" -> ProtobufParser.parseString(path);
             }
         }
 
