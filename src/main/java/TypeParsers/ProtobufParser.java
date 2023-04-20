@@ -1,6 +1,6 @@
 package TypeParsers;
 
-public class ProtobufParser implements Parseable {
+public class ProtobufParser extends Parseable {
 
     public void parseString(StringBuilder input) {
         System.out.println(input);

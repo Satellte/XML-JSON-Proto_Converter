@@ -1,8 +1,8 @@
 package TypeParsers;
 
-public abstract Parseable {
+public class Parseable {
 
-    int countKey = 0;
+    int countKey;
 
     void parseString(){
 

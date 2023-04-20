@@ -1,9 +1,9 @@
 package TypeParsers;
 
-public class XmlParser implements Parseable {
+public class XmlParser extends Parseable {
 
 
-    public void parseString(StringBuilder input) {
+    public static void parseString(StringBuilder input) {
         System.out.println(input);
         this.countKeys();
     }

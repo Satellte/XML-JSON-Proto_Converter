@@ -1,9 +1,9 @@
 package TypeParsers;
 
-public class JsonParser implements Parseable {
+public class JsonParser extends Parseable {
 
 
-    public void parseString(StringBuilder input) {
+    public static void parseString(StringBuilder input) {
         System.out.println(input);
         this.countKeys();
     }
