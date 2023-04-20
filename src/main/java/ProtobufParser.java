@@ -1,4 +1,4 @@
-public class protobufManager implements Parseable{
+public class ProtobufParser implements Parseable{
     @Override
     public void parse(String string) {
 

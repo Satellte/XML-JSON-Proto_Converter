@@ -1,7 +1,12 @@
 public interface Parseable {
-    void parse(String string);
 
-    void countKey();
+    StringBuilder stringToParse = new StringBuilder();
+
+    public static void parse(StringBuilder string) {
+
+    }
+
+    public void countKey();
 
 
 }
