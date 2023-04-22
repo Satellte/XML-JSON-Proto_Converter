@@ -15,8 +15,9 @@ import java.io.IOException;
 
 public class XmlParser extends Parseable {
 
+    int countedKeys = 0;
     public static void parseString(String path) {
-        int count = 0;
+
         File inputFile = new File(path);
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -38,17 +39,12 @@ public class XmlParser extends Parseable {
 
         NodeList nodeList = doc.getElementsByTagName("*");
 
-        System.out.println("В общем в Казахстане тегов " + nodeList.getLength());
+        printCount(nodeList.getLength());
+
     }
 
 
-    public static void countKeys() {
-        System.out.println("Считаем ключи");
-        printCount();
-    }
-
-
-    public static void printCount() {
+    public static void printCount(int countedKeys) {
         System.out.println("Красивый вывод на печать счетчика XML" );
     }
 }

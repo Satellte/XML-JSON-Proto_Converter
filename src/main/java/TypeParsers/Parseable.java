@@ -1,16 +1,12 @@
 package TypeParsers;
 
 public class Parseable {
-
-    int countKey;
+    int countedKeys;
 
     void parseString(){
 
         }
 
-    static void countKeys(){
-
-        }
 
     static void printCount(){
 
