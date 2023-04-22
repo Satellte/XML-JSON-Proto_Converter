@@ -1,46 +1,26 @@
 package Utils;
 
 import TypeParsers.JsonParser;
-import TypeParsers.ProtobufParser;
 import TypeParsers.XmlParser;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Utils {
     static Scanner scan = new Scanner(System.in);
-    public static void readFile(){
+    public static void readFile() throws IOException {
         System.out.println("Укажите файл:");
         String path = scan.nextLine();
         scan.close();
         String formatOfFile = checkType(path);
         switch (formatOfFile) {
                 case "XML" -> XmlParser.parseString(path);
-//                case "JSON" -> JsonParser.parseString(path);
+                case "JSON" -> JsonParser.countKeysInJsonFile(path);
 //                case "PROTO" -> ProtobufParser.parseString(path);
             }
         }
 
-//    public static void getTypeOfFile(StringBuilder inputString){
-//        if (inputString == null || inputString.isEmpty()) {
-//            System.out.println("Не верный ввод");;
-//        }
-//
-//        char firstChar = inputString.charAt(0);
-//
-//        if (firstChar == '{') {
-//            System.out.println("Это JSON. Запускай парсер JSON");
-//            JsonParser.parseString(inputString);
-//        } else if (firstChar == '<') {
-//            System.out.println("Это XML. Запускай парсер XML");
-//            XmlParser.parseString(inputString);
-//        } else {
-//            System.out.println("Неподходящий тип");
-//        }
-//    }
-
-    public static String checkType(String path){
+    public static String checkType(String path) throws IOException {
         if (path == null) {
             System.out.println("Не верно указан путь");
             readFile();

@@ -1,16 +1,9 @@
 package TypeParsers;
 
 public class Parseable {
-    int countedKeys;
+    String typeOfFile;
 
-    void parseString(){
+    void parseString(){}
 
-        }
-
-
-    static void printCount(){
-
-        }
-
-
+    static void printCount(){}
 }
