@@ -1,19 +1,21 @@
 package TypeParsers;
 
+import java.io.File;
+
+
 public class ProtobufParser extends Parseable {
 
-    public static void parseString(StringBuilder input) {
-        System.out.println(input);
-        countKeys();
-    }
+    static String typeOfFile = "JSON";
 
-    public static void countKeys() {
-        System.out.println("Считаем ключи");
-        printCount();
+    public static void parseString(File file){
+
     }
 
 
-    public static void printCount() {
-        System.out.println("Красивый вывод на печать счетчика ProtoBuf" );
+
+
+    public static void printCount(int countedKeys) {
+        System.out.println("The type of parsing file is" + typeOfFile
+                + "\nCounted keys in the file is " + countedKeys);
     }
 }

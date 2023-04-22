@@ -1,6 +1,7 @@
 package Utils;
 
 import TypeParsers.JsonParser;
+import TypeParsers.ProtobufParser;
 import TypeParsers.XmlParser;
 
 import java.io.File;
@@ -18,7 +19,7 @@ public class Utils {
         switch (formatOfFile) {
                 case "XML" -> XmlParser.parseString(file);
                 case "JSON" -> JsonParser.parseString(file);
-//                case "PROTO" -> ProtobufParser.parseString(file);
+                case "PROTO" -> ProtobufParser.parseString(file);
             }
         }
 
