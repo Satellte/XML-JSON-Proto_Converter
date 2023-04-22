@@ -13,9 +13,9 @@ import java.io.IOException;
 public class XmlParser extends Parseable {
 
     static String typeOfFile = "XML";
-    public static void parseString(String path) {
+    public static void parseString(File file) {
 
-        File inputFile = new File(path);
+        File inputFile = new File(file.toURI());
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;
         try {

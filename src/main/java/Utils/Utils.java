@@ -3,6 +3,7 @@ package Utils;
 import TypeParsers.JsonParser;
 import TypeParsers.XmlParser;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,10 +14,11 @@ public class Utils {
         String path = scan.nextLine();
         scan.close();
         String formatOfFile = checkType(path);
+        File file = new File(path);
         switch (formatOfFile) {
-                case "XML" -> XmlParser.parseString(path);
-                case "JSON" -> JsonParser.countKeysInJsonFile(path);
-//                case "PROTO" -> ProtobufParser.parseString(path);
+                case "XML" -> XmlParser.parseString(file);
+                case "JSON" -> JsonParser.parseString(file);
+//                case "PROTO" -> ProtobufParser.parseString(file);
             }
         }
 

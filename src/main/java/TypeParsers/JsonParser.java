@@ -9,12 +9,10 @@ import java.io.IOException;
 public class JsonParser extends Parseable {
     static String typeOfFile = "JSON";
 
-    public static void countKeysInJsonFile(File jsonFile) throws IOException {
+    public static void parseString(File jsonFile) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-
         JsonNode jsonNode = objectMapper.readTree(jsonFile);
-
-        System.out.println(jsonNode.size());
+        printCount(jsonNode.size());
     }
 
 
